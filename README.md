@@ -9,4 +9,4 @@ This program helps you perform basic arithmetic operations, like addition, subtr
 ## Concepts used :
 1. Switch case
 2. Standard I/O (scanf) and (printf) statements
-3. loop statements (while loop is used in this program)
+3. Loop statements (while loop is used in this program)
