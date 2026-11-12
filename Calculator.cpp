@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     cout<<"=================Menu-driven Calculator================="<<endl;
     cout<<endl;
-    int a,b;
+    long long a,b;
     int operation;
     int Continue;
     while(Continue!=0) {
