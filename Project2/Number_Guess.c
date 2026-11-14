@@ -12,6 +12,8 @@ int main() {
 
     int Guess,diff,diff1;
     int Count = 10;
+    int Original = Count;
+    char Reattempt;
 
     while(Count!=0) {
         printf("Enter number to guess : ");
@@ -38,13 +40,24 @@ int main() {
             printf("Number of attempts left : %d\n",Count);
         }
         if(Guess == secret_num) {
-            printf("Congratulations!!\nYou have guessed the number.\nGame Over.\n");
-            break;
+            printf("Congratulations!!\nYou have guessed the number.\n");
+            printf("Wanna play the game again [Y/N] : ");
+            scanf(" %c",&Reattempt);
+            if(Reattempt == 'Y'||Reattempt == 'y') {
+                printf("\nWelcome Back\n");
+                secret_num = (rand() % 100) + 1;
+                Count = Original;
+            }
+            if(Reattempt == 'N'||Reattempt == 'n') {
+                printf("Game Over.\nSee you next time.\n");
+                break;
+            }
         }
+    } 
+
+    if(Count==0) {
+        printf("No correect guesses.\nGame End\n");
+        printf("The secret number was : %d\n",secret_num);
     }
-
-    if(Count==0)
-        printf("No correect guesses.\nGame End");
-
     return 0;
 }
