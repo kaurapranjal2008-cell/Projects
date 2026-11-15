@@ -5,6 +5,7 @@
 int main() {
     srand(time(NULL));
     int secret_num = (rand() % 100) + 1;
+    printf("%d",secret_num);
     printf("\n********************************Number Guessing Game********************************\n");
     printf("Instructions : ");
     printf("1.Number of available attempts : 10\n");
@@ -46,6 +47,7 @@ int main() {
             if(Reattempt == 'Y'||Reattempt == 'y') {
                 printf("\nWelcome Back\n");
                 secret_num = (rand() % 100) + 1;
+                printf("%d",secret_num);
                 Count = Original;
             }
             if(Reattempt == 'N'||Reattempt == 'n') {
@@ -53,11 +55,23 @@ int main() {
                 break;
             }
         }
-    } 
-
-    if(Count==0) {
-        printf("No correect guesses.\nGame End\n");
-        printf("The secret number was : %d\n",secret_num);
+        if(Count==0) {
+            printf("The secret number was : %d\n",secret_num);
+            printf("Better luck next time.\n");
+            printf("Wanna play the game again [Y/N] : ");
+            scanf(" %c",&Reattempt);
+            if(Reattempt == 'Y'||Reattempt == 'y') {
+                printf("\nWelcome Back\n");
+                secret_num = (rand() % 100) + 1;
+                printf("%d",secret_num);
+                Count = Original;
+            }
+            if(Reattempt == 'N'||Reattempt == 'n') {
+                printf("Game Over.\nSee you next time.\n");
+                break;
+            }
+        }
     }
+
     return 0;
 }
